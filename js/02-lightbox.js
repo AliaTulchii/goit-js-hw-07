@@ -27,33 +27,6 @@ gallery.insertAdjacentHTML('beforeend', imgsMarkup);
 
 
 
-gallery.addEventListener('click', onGalleryContainerClick)
-
-
-
-function onGalleryContainerClick(evt) {
-    evt.preventDefault();
-
-    if (!evt.target.classList.contains('gallery__image')) {
-        return;
-    }
-
-    let gallery = new SimpleLightbox('.gallery .gallery__item', { captions: true, captionSelector: 'img', captionType: 'attr', captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250 });
-    gallery.on('show.simplelightbox', function () {
-        
-      
-    });
+let lightbox = new SimpleLightbox('.gallery .gallery__item', { captions: true, captionSelector: 'img', captionType: 'attr', captionsData: 'alt', captionPosition: 'bottom', captionDelay: 250 });
     
-
-    gallery.addEventListener("keydown", (evt) => {
-        if (evt.code === "Escape") {
-            instance.close();
-        }
-    });
-}
-
-
-
-  
-
- 
+    
